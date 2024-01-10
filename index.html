@@ -4,15 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Form3</title>
+    <title>Payment page1</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 <main>
+    <h1>
+        Payment Gateway
+    </h1>
+    <form id="form">
+        <div class="container">
+            <div>Card holder:</div>
+            <div class="input-row row">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                </svg>
+                <input type="text" id="name" placeholder="Coding Market">
+            </div>
+        </div>
+        <div class="container">
+            <div>Card number:</div>
+            <div class="input-row row">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-credit-card" viewBox="0 0 16 16">
+                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
+                    <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                </svg>
+                <input id="card_number" type="number" inputmode="numeric" pattern="[0-9\s]{13,19}" maxlength="19"
+                       placeholder="Card Number">
+            </div>
+        </div>
+
+        <div class="row gap-10">
+            <div>
+                <div>Expiry date:</div>
+                <div class="input-row row">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-calendar3" viewBox="0 0 16 16">
+                        <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z"/>
+                        <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                    </svg>
+                    <div class="expiration-input">
+                        <input id="expiry_month" type="number" placeholder="00" pattern="[0-9]{1,2}" min="1" max="12"
+                               maxlength="2">
+                        /
+                        <input id="expiry_day" type="number" placeholder="00" pattern="[0-9]{1,2}" min="1" max="31"
+                               maxlength="2">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>CVC:</div>
+                <div class="input-row row">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-lock-fill" viewBox="0 0 16 16">
+                        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+                    </svg>
+                    <input id="cvc" type="number"
+                           class="cvc_input"
+                           inputmode="numeric" pattern="[0-9]{3,4}" maxlength="4"
+                           min="100" max="9999"
+                           placeholder="000">
+                </div>
+            </div>
+        </div>
+        <button class="pay-btn" type="submit" form="form">Pay</button>
+    </form>
 </main>
 </body>
 </html>
